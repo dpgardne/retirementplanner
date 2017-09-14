@@ -3,51 +3,30 @@ const app = express();
 const port = process.env.PORT || 3000
 const morgan = require('morgan')
 const mongoose = require('mongoose');
-const User = require('./app/models/user')
+//define router
+const router = express.Router();
+const appRoutes = require('./app/routes/api')(router);
+const path = require('path')
+
+
 const bodyParser = require('body-parser')
 
 //middleware use
-
+app.use(morgan('dev'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.static(__dirname + '/public'))
+app.use('/api', appRoutes)
+//api/users
 
-app.use(morgan('dev'))
 //middleware end
 
 
-app.get('/', (request, response) => {
-response.send('welcome')
+app.get('*', (request, response) => {
+response.sendFile(path.join(__dirname + '/public/app/views/index.html'))
 });
 
-//to create new user
-//go into postman and select post with localhost:3000/users then send. user[username] "newuser"
-app.post('/users', function(req,res){
-  const user = new User()
-  //create new variable and named it user
-  user.username = req.body.username;
-  user.password = req.body.password;
-  user.email = req.body.email
-  if (req.body.username == null || req.body.username == '' || req.body.password == null || req.body.password == '' || req.body.email == null || req.body.email == '') {
-    res.send('ensure username, email and password were provided')
-  } else {
-  user.save(function(err){
-    if(err) {
-    res.send(err)
-  } else {
-      res.send('user created')
-    }
-  })
-  }
-})
 
-//to add a user in postman make sure is set to json and put it in raw field
-// {
-//
-// "username": "davidsdfddsdf",
-// "password": "wedsdsdr",
-// "email": "ddddddsdsdd@gmail.com"
-//
-// }
 
   //use save to save the above information
 //open new terminal tab and type mongo
