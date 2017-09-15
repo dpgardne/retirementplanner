@@ -22,8 +22,8 @@ app.use('/api', appRoutes)
 //middleware end
 
 
-app.get('*', (request, response) => {
-response.sendFile(path.join(__dirname + '/public/app/views/index.html'))
+app.get('*', (req, res) => {
+res.sendFile(path.join(__dirname + '/public/app/views/index.html'))
 });
 
 

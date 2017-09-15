@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+  <base href="/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Here is my site</title>
-</head>
-<body>
+  <title>Retirement planner</title>
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <script src="assets/js/angular.js" charset="utf-8"></script>
+  <script src="assets/js/angular-route.js" charset="utf-8"></script>
+  <script src="app/app.js" charset="utf-8"></script>
+  <script src="app/routes.js" charset="utf-8"></script>
 
-  this is the website
+</head>
+<body ng-app="retirementApp">
+  <ul>
+<li><a href="/">Home</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  </ul>
+
+  <div ng-view></div>
+
+  <div class="row">
+  <div class="col-sm-4">.col-sm-4</div>
+  <div class="col-sm-4">.col-sm-4</div>
+  <div class="col-sm-4">.col-sm-4</div>
+</div>
+
+
+<!-- inject home view  -->
+
+
+<!-- bootstrap js and jquery -->
+<script src="assets/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+<script src="assets/js/bootstrap.js" charset="utf-8"></script>
 
 </body>
 </html>
