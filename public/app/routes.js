@@ -21,6 +21,10 @@ angular.module('retirementRoutes', ['ngRoute'])
     templateUrl: 'app/views/tree/users/login.html'
   })
 
+  .when('/logout', {
+    templateUrl: 'app/views/tree/users/logout.html'
+  })
+
     .otherwise({redirectTo: '/'})
   //end
 
