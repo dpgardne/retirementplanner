@@ -1,14 +1,14 @@
 <div class="page-header">user signup</div>
 <h1>Sign up</h1>
-<form ng-submit = "signup.newUser();">
+<form ng-submit = "signup.newUser(userData);">
   <label>Email:</label>
-  <input class="form-control" type="text" name="email" placeholder="Email">
+  <input class="form-control" type="text" name="email" placeholder="Email" ng-model="signup.userData.email">
   <br />
   <label>Username:</label>
-  <input class="form-control"  type="text" name="username" placeholder="Username">
+  <input class="form-control"  type="text" name="username" placeholder="Username" ng-model="signup.userData.username">
   <br />
   <label>Password:</label>
-  <input class="form-control"  type="text" name="password" placeholder="Password">
+  <input class="form-control"  type="password" name="password" placeholder="Password" ng-model="signup.userData.password">
   <br />
   <button class=" btn btn-primary" type="submit">Register</button>
 
