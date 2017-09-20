@@ -11,7 +11,9 @@ angular.module('retirementRoutes', ['ngRoute'])
   })
 
   .when('/signup', {
-    templateUrl: 'app/views/tree/users/signup.html'
+    templateUrl: 'app/views/tree/users/signup.html',
+    controller: 'signupController',
+    controllerAs: 'signup'
   })
   //when users go to register feed them the above view
 
