@@ -1,4 +1,6 @@
 const User = require('../models/user')
+var jwt = require('jsonwebtoken');
+var secret = 'meal'
 
 module.exports = function(router) {
 
@@ -39,7 +41,8 @@ router.post('/users', function(req,res){
           if(!validPassword) {
             res.json({success: false, message: 'Could not authenticate password'})
           } else {
-            res.json({success: true, message: 'User authenticated'})
+            var token = jwt.sign({ username: user.username, email: user.email }, secret, {expiresIn: '24h'})
+            res.json({success: true, message: 'User authenticated', token: token})
           }
       }
     });
@@ -49,11 +52,12 @@ router.post('/users', function(req,res){
 }
 
 
+
+
+
 //to add a user in postman make sure is set to json and put it in raw field
 // {
-//
 // "username": "davidsdfddsdf",
 // "password": "wedsdsdr",
 // "email": "ddddddsdsdd@gmail.com"
-//
 // }

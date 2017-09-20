@@ -1,10 +1,34 @@
 angular.module('authServices', [])
 
-.factory('Auth', function($http){
+.factory('Auth', function($http, AuthToken){
   authFactory = {}
   // User.create(userData)
   authFactory.login = function (loginData) {
-    return $http.post('api/authenticate', loginData)
-  }
+    return $http.post('api/authenticate', loginData).then(function(data){
+      AuthToken.setToken(data.data.token)
+      return data;
+    });
+  };
+  // Auth.isLoggedIn();
+  authFactory.isLoggedIn = function() {
+    if(AuthToken.getToken()) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   return authFactory;
+})
+
+.factory ('AuthToken', function($window){
+  var authTokenFactory = {};
+  // AuthToken.setToken(token)
+  authTokenFactory.setToken = function(token) {
+    $window.localStorage.setItem('token', token)
+  }
+  // AuthToken.getToken()
+  authTokenFactory.getToken = function() {
+    return $window.localStorage.getItem('token')
+  }
+  return authTokenFactory
 })
