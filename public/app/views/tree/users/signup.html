@@ -12,6 +12,14 @@
   <br />
   <button class=" btn btn-primary" type="submit">Register</button>
 </form>
+
+<br />
+<!-- whenever loading is true show this -->
+<div class="jumbotron text-center" ng-show="signup.loading">
+  <span class="glyphicon glyphicon-repeat spinner"></span>
+  <p>Loading...</p>
+</div>
+
 <br />
 <div class="row show-hide-message" ng-show=signup.successMsg>
   <div class="alert alert-success">{{signup.successMsg}}</div>
