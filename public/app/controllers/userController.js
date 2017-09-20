@@ -1,6 +1,6 @@
 angular.module('userControllers', [])
 
-.controller('signupController', function($http){
+.controller('signupController', function($http, $location){
   const app = this;
     this.newUser = function(userData) {
       app.loading = true;
@@ -12,6 +12,7 @@ angular.module('userControllers', [])
           if(data.data.success) {
             app.loading = false;
             app.successMsg = data.data.message;
+            $location.path('/')
           } else {
             app.loading = false;
             app.errorMsg = data.data.message;
