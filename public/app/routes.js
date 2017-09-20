@@ -10,6 +10,11 @@ angular.module('retirementRoutes', ['ngRoute'])
     templateUrl: 'app/views/tree/faq.html'
   })
 
+  .when('/signup', {
+    templateUrl: 'app/views/tree/users/signup.html'
+  })
+  //when users go to register feed them the above view
+
     .otherwise({redirectTo: '/'})
   //end
 
