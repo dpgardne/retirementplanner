@@ -1,0 +1,29 @@
+<div class="page-header">Login</div>
+<h1>Login</h1>
+<form ng-submit = "signup.newUser(userData);">
+
+  <label>Username:</label>
+  <input class="form-control"  type="text" name="username" placeholder="Username" ng-model="signup.userData.username">
+  <br />
+  <label>Password:</label>
+  <input class="form-control"  type="password" name="password" placeholder="Password" ng-model="signup.userData.password">
+  <br />
+  <button class=" btn btn-primary" type="submit">Login</button>
+</form>
+
+<br />
+<!-- whenever loading is true show this -->
+<div class="jumbotron text-center" ng-show="signup.loading">
+  <span class="glyphicon glyphicon-repeat spinner"></span>
+  <p>Loading...</p>
+</div>
+
+<br />
+<div class="row show-hide-message" ng-show=signup.successMsg>
+  <div class="alert alert-success">{{signup.successMsg}}</div>
+</div>
+
+<br />
+<div class="row show-hide-message" ng-show=signup.errorMsg>
+  <div class="alert alert-danger">{{signup.errorMsg}}</div>
+</div>

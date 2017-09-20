@@ -1,1 +1,1 @@
-angular.module('retirementApp', ['retirementRoutes', 'userControllers', 'userServices'])
+angular.module('retirementApp', ['retirementRoutes', 'userControllers', 'userServices', 'mainController'])
