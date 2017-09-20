@@ -1,12 +1,11 @@
-angular.module('userControllers', [])
+angular.module('userControllers', ['userServices'])
 
-.controller('signupController', function($http, $location, $timeout){
+.controller('signupController', function($http, $location, $timeout, User){
   const app = this;
     this.newUser = function(userData) {
       app.loading = true;
       app.errorMsg = false;
-      console.log('form submitted')
-      $http.post('/api/users', this.userData).then(function(data){
+      User.create(app.userData).then(function(data){
           if(data.data.success) {
             app.loading = false;
             app.successMsg = data.data.message + '..Redirecting to home';
