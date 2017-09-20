@@ -10,13 +10,13 @@ router.post('/users', function(req,res){
   user.password = req.body.password;
   user.email = req.body.email
   if (req.body.username == null || req.body.username == '' || req.body.password == null || req.body.password == '' || req.body.email == null || req.body.email == ''){
-    res.send('ensure username, email and password were provided')
+    res.json({success: false, message: 'ensure username, email and password were provided'})
 } else {
   user.save(function(err){
     if(err) {
-    res.send('Username or email taken')
+    res.json({success: false, message: 'ensure username, email and password were provided'})
   } else {
-      res.send('user created')
+      res.json({success: true, message: 'new user created'})
       }
     });
   }
