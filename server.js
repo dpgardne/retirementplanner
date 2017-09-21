@@ -33,14 +33,20 @@ res.sendFile(path.join(__dirname + '/public/app/views/index.html'))
   //show dbs then use retirement
 
 //connect to mongo show error if not connected or success if connected
-mongoose.connect('mongodb://localhost:27017/retirement',function(err){
-  if(err) {
-    console.log('not connect ' + err)
-  } else {
-    console.log('connected to mongo')
-  }
-});
+// mongoose.connect('mongodb://localhost:27017/retirement',function(err){
+//   if(err) {
+//     console.log('not connect ' + err)
+//   } else {
+//     console.log('connected to mongo')
+//   }
+// });
 
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/retirement';
+mongoose.connect(mongoUri);
+
+mongoose.connection.once('open', ()=> {
+  console.log('connect to mongo')
+})
 
 
 
