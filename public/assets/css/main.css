@@ -30,10 +30,12 @@ header a {
 
 .logo {
   float: left;
-  padding: 10px;
+  padding: 15px;
   margin-left: 0px;
   background-color: #35ad5f;
   color: white;
+  height: auto;
+  min-height: 55px;
   position: absolute;
   top: 0;
   left: 0;
@@ -57,9 +59,15 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin-left: 185px;
   padding-top: 20px;
   position: relative;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+nav li a {
+  margin-right: 15px;
 }
 
 nav a:hover {
@@ -94,6 +102,12 @@ nav a:hover {
 .containerHome_about h2 {
   font-size: 26px;
   padding-bottom: 40px;
+}
+
+.containerHome_about a {
+  color: white;
+  font-size: 15px;
+  text-align: right:
 }
 
 .alert {
