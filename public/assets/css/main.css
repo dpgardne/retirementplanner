@@ -1,0 +1,123 @@
+body {
+
+  margin: 0px;
+  padding: 0;
+  font-family: 'Arimo', sans-serif;
+  font-size: 18px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #3c3c3c;
+  color: #3c3c3c;
+
+}
+
+header a {
+  color: #e5e4e5;
+  font-size: 18px;
+  font-weight: 400px;
+
+}
+
+.logo {
+  float: left;
+  padding: 10px;
+  margin-left: 0px;
+  background-color: #35ad5f;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Merriweather', cursive;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+nav {
+  float: right
+}
+
+nav ul {
+  margin: 0;
+  padding: 0
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 185px;
+  padding-top: 20px;
+  position: relative;
+}
+
+nav a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.glyphicon {
+  margin-right: 10px;
+}
+
+.containerHome {
+  background-image: url("../images/plan.jpg");
+  height: 600px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: 100%;
+}
+
+.containerHome_about {
+  background-color: #35ad5f;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  font-size: 24px;
+  padding: 14px;
+  color: white;
+}
+
+.containerHome_about h2 {
+  font-size: 26px;
+  padding-bottom: 40px;
+}
+
+.alert {
+  width: 100%;
+}
+
+.form-control {
+  height: 40px;
+  width: 400px;
+  font-size: 18px;
+}
+
+.loginForm {
+  width: 40%;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  font-size: 18px;
+}
+
+.signupForm {
+  width: 40%;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  font-size: 18px;
+}

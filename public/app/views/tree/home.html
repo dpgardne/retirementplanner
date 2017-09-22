@@ -1,11 +1,17 @@
+<!-- What user see when not logged in -->
+<div class="containerHome" ng-show="!main.isLoggedIn">
+<div class="containerHome_about">
+  <h2>Retire the right way</h2>
+  <p>Signup for free to plan your retirement savings and set a goal to retire comfortably.</p>
+</div>
+</div>
+<!-- What user see when not logged in -->
+
+
+<!-- What user sees when logged in -->
 <div class="page-header" ng-show="main.isLoggedIn">
 <h1>Hi, {{ main.username }} welcome to your retirement plan</h1>
-
-
-
-
 <div ng-controller="financeController as ctrl">
-
   <div ng-repeat="retire in ctrl.retires">
     Portfolio Type: {{retire.portfolioType}},
     Large Cap: {{retire.largeCap}},

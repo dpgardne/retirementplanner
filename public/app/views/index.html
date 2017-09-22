@@ -8,6 +8,9 @@
   <title>Retirement planner</title>
   <!-- bootstrap css -->
   <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Arimo|Niconne|Pinyon+Script|Dekko|Merriweather" rel="stylesheet">
   <!-- angular -->
   <script src="assets/js/angular.js" charset="utf-8"></script>
   <script src="assets/js/angular-route.js" charset="utf-8"></script>
@@ -21,10 +24,16 @@
   <!-- angular services -->
   <script src="app/services/userServices.js" charset="utf-8"></script>
   <script src="app/services/authServices.js" charset="utf-8"></script>
-
 </head>
 <body ng-app="retirementApp" ng-controller="mainCtrl as main">
-  
+
+  <!-- navigation  -->
+  <header>
+  <div class="container">
+    <div class="logo">
+      <span class="glyphicon glyphicon-pencil"></span>Retirement Planner
+    </div>
+<nav>
   <ul>
 <li><a href="/">Home</a></li>
   <!-- if user is not logged in then show it  -->
@@ -33,9 +42,13 @@
   <li><a href="#" ng-click="main.logout();" ng-show="main.isLoggedIn">Logout</a></li>
   <li><a href="/profile" ng-show="main.isLoggedIn">Welcome {{main.username}}</a></li>
   </ul>
+</nav>
+</div>
+</header>
+<!-- navigation  -->
+
 
   <div ng-view></div>
-
 
 
 
