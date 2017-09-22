@@ -3,7 +3,7 @@ angular.module('mainController', ['authServices'])
 .controller('mainCtrl', function(Auth, $timeout, $location, $rootScope){
   const app = this;
 
-  
+
   $rootScope.$on('$routeChangeStart', function(){
     if(Auth.isLoggedIn()) {
       console.log('Success user is logged in')
@@ -48,5 +48,7 @@ angular.module('mainController', ['authServices'])
         $location.path('/');
       }, 2000)
     };
+
+    
 
   });

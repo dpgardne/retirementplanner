@@ -6,7 +6,9 @@ const mongoose = require('mongoose');
 //define router
 const router = express.Router();
 const appRoutes = require('./app/routes/api')(router);
+const retirementRoutes = require('./app/routes/retirement');
 const path = require('path')
+
 
 
 const bodyParser = require('body-parser')
@@ -17,6 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(__dirname + '/public'))
 app.use('/api', appRoutes)
+app.use('/retirement', retirementRoutes)
 //api/users
 
 //middleware end
@@ -25,6 +28,8 @@ app.use('/api', appRoutes)
 app.get('*', (req, res) => {
 res.sendFile(path.join(__dirname + '/public/app/views/index.html'))
 });
+
+
 
 
 
