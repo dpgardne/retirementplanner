@@ -2,6 +2,12 @@ angular.module('mainController', ['authServices'])
 
 .controller('mainCtrl', function(Auth, $timeout, $location, $rootScope){
   const app = this;
+  this.calc = function() {
+  app.num100 = (Math.pow(1 + (.06/12), (this.num2 * 12)) - 1) / 0.005 * this.num3 + (Math.pow(1 + (.06/12), (this.num2 * 12)) * this.num1)
+  app.disclaimer = 'Based on S&P 500 average annualized return of 9.8% over the past 90 years'
+
+
+}
 
 
   $rootScope.$on('$routeChangeStart', function(){
@@ -49,6 +55,6 @@ angular.module('mainController', ['authServices'])
       }, 2000)
     };
 
-    
+
 
   });

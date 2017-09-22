@@ -76,5 +76,8 @@ app.controller('financeController', ['$http', function($http){
       }
     );
   }
+
+
+
   this.getRetires();
 }]);
