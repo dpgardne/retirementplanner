@@ -135,3 +135,31 @@ nav a:hover {
   top: 50px;
   font-size: 18px;
 }
+
+.containerCalc {
+  width: 400px;
+  margin-left: 40px;
+  padding: 20px;
+  background-color: #e8e8ee;
+}
+
+.btn {
+  font-size: 16px;
+}
+
+.containerPort{
+  margin: 30px;
+}
+
+.containerSave input {
+  width: 250px;
+  height:40px;
+  font-size: 16px;
+}
+
+.containerSave {
+  width: 400px;
+  margin-left: 40px;
+  padding: 20px;
+  background-color: #e8e8ee;
+}

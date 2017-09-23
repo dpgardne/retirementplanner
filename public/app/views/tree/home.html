@@ -14,27 +14,108 @@
 
 
 
-<h1>Hi, {{ main.username }} welcome to your retirement plan</h1>
+<h4 class="alert alert-success">Hi, {{ main.username }} let's start planning your retirement</h4>
 <br />
+
 <!-- Calculation -->
-Enter current retirement savings<br />
+<div class="containerCalc">
+  <h4>Let's start here!</h4>
+  <h5>Step 1</h5>
+  <p>First let's see how much will be in your retirement account after you are done working. If the number doesn't look high enough consider adjusting your inputs to find a retirement goal on which you can live comfortably.</p>
+Current amount in retirement savings<br />
 <input type="number" ng-model="main.num1" placeholder="Ex: $40,000">
 <br />
-Number of years till retirement <br />
+Number of years till you retire <br />
  <input type="number" ng-model="main.num2" placeholder="Ex: 20">
 <br />
-Monthly contribution amount <br />
+Monthly amount you will contribute each month <br />
  <input type="number" ng-model="main.num3" placeholder="Ex: $800">
 <br />
-
-<button class="btn btn-primary" ng-click ="main.calc()">Compute</button>
-
+<br />
+<button class="btn btn-primary" ng-click ="main.calc()">Compute total</button>
+<br />
+<br />
 
 <h2>{{ main.num100 | currency:"USD $":0}}</h2>
 <h6>{{main.disclaimer}}</h6>
+</div>
+<!-- Calculation -->
 
+<!-- Portfoios -->
+<div class="containerPort">
+  <h4>Examine different stock portfolios</h4>
+  <h5>Step 2</h5>
+  <p>
+    These are different stock allocations you can use for investing and are provided by Charles Schwab. These are not recommendations. Always do research and consult with a professional if you have any questions. There are always risks involved with investing.
+  </p>
+  <table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Portfolio Type</th>
+      <th>Age</th>
+      <th>Large-Cap Equity</th>
+      <th>Small-Cap Equity</th>
+      <th>International Equity</th>
+      <th>Fixed Income</th>
+      <th>Cash Investments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Aggressive</th>
+      <td>None given</td>
+      <td>50%</td>
+      <td>20%</td>
+      <td>25%</td>
+      <td>0%</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <th scope="row">Moderately Aggressive</th>
+      <td>None given</td>
+      <td>45%</td>
+      <td>15%</td>
+      <td>20%</td>
+      <td>15%</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <th scope="row">Moderate</th>
+      <td>60-69</td>
+      <td>35%</td>
+      <td>10%</td>
+      <td>15%</td>
+      <td>35%</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <th scope="row">Moderately Conservative</th>
+      <td>70-79</td>
+      <td>25%</td>
+      <td>5%</td>
+      <td>10%</td>
+      <td>50%</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <th scope="row">Conservative</th>
+      <td>80+</td>
+      <td>15%</td>
+      <td>5%</td>
+      <td>0%</td>
+      <td>50%</td>
+      <td>30%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<!-- Portfoios -->
 
-<div ng-controller="financeController as ctrl">
+<!-- save your information -->
+<div ng-controller="financeController as ctrl" class="containerSave">
+  <h4>Save your retirement plan</h4>
+  <h5>Step 3</h5>
+  <p>Based on your own personal goals you can save your information</p>
   <div ng-repeat="retire in ctrl.retires">
     Portfolio Type: {{retire.portfolioType}},
     Large Cap: {{retire.largeCap}},
@@ -70,7 +151,7 @@ Monthly contribution amount <br />
   Cash: <br />  <input type="text" ng-model="ctrl.cashCap" placeholder="Enter Amount of Cash"> <br /> <br />
   Contribution: <br />  <input type="text" ng-model="ctrl.contribution" placeholder="Enter Monthly Contribution"> <br /> <br />
   Retirement Goal: <br />  <input type="text" ng-model="ctrl.retirementGoal" placeholder="Enter Retirement Goal"> <br /> <br />
-  <input type="submit" value="Submit retirement plan" class="btn btn-success">
+  <input type="submit" value="Save a retirement plan" class="btn btn-success">
   </form>
 
   </div>
