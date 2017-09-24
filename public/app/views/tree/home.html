@@ -111,23 +111,25 @@ Monthly amount you will contribute each month <br />
 </div>
 <!-- Portfoios -->
 
-<!-- save your information -->
-<div ng-controller="financeController as ctrl" class="containerSave">
-  <h4>Save your retirement plan</h4>
-  <h5>Step 3</h5>
-  <p>Based on your own personal goals you can save your information</p>
+
+<div ng-controller="financeController as ctrl"  class="savedPorts">
   <div ng-repeat="retire in ctrl.retires">
-    Portfolio Type: {{retire.portfolioType}},
-    Large Cap: {{retire.largeCap}},
-    Small Cap: {{retire.smallCap}},
-    Fixed Cap: {{retire.fixedCap}},
-    Cash Cap: {{retire.cashCap}},
-    Contribution: {{retire.contribution}},
-    Retirement Goal: {{retire.retirementGoal}}
+<table class="table table-bordered myRow">
+    <th class="row">
+    <td><strong>Portfolio Type:</strong> {{retire.portfolioType}}</td>
+    <td><strong>Large Cap:</strong> {{retire.largeCap}},</td>
+    <td><strong>Small Cap:</strong> {{retire.smallCap}},</td>
+    <td><strong>Fixed Cap:</strong> {{retire.fixedCap}},</td>
+    <td><strong>Cash Cap:</strong> {{retire.cashCap}},</td>
+    <td><strong>Contribution:</strong> {{retire.contribution}},</td>
+    <td><strong>Retirement Goal:</strong> {{retire.retirementGoal}}</td>
+    </th>
+</table>
 
     <button ng-click="ctrl.deleteRetires(retire)" class="btn btn-primary">Delete</button>
     <!-- edit retirement plan -->
 <a href="#" ng-click="ctrl.index = $index">Edit</a>
+
 <form ng-if="$index===ctrl.index"  ng-submit="ctrl.editRetires(retire)">
   Portfolio Type: <br /> <input type="text" ng-model="ctrl.editedPortfolioType" placeholder="Enter Portfolio Type"> <br /> <br />
   Large Cap:  <br /> <input type="text" ng-model="ctrl.editedLargeCap" placeholder="Enter Amount of Large Cap"> <br /> <br />
@@ -139,19 +141,35 @@ Monthly amount you will contribute each month <br />
   <input type="submit" value="Submit New Retirement Plan" class="btn btn-success">
 </form>
 </div>
+</div>
+
+
+
+
+
+
+
+<!-- save your information -->
+<div ng-controller="financeController as ctrl" class="containerSave">
+
+
+
 
   <!-- add retirement plan -->
   <div class="container">
+    <h4>Save your retirement plan</h4>
+    <h5>Step 3</h5>
+    <p>Based on your own personal goals you can save your information</p>
   <h5> Create A New Retirement Plan</h5>
   <form ng-submit="ctrl.createRetires();">
-  Portfolio Type: <br /> <input type="text" ng-model="ctrl.portfolioType" placeholder="Enter Portfolio Type"> <br /> <br />
-  Large Cap:  <br /> <input type="text" ng-model="ctrl.largeCap" placeholder="Enter Amount of Large Cap"> <br /> <br />
-  Small Cap: <br />  <input type="text" ng-model="ctrl.smallCap" placeholder="Enter Amount of Small Cap"> <br /> <br />
-  Fixed Cap: <br />  <input type="text" ng-model="ctrl.fixedCap" placeholder="Enter Amount of Fixed Cap"> <br /> <br />
-  Cash: <br />  <input type="text" ng-model="ctrl.cashCap" placeholder="Enter Amount of Cash"> <br /> <br />
-  Contribution: <br />  <input type="text" ng-model="ctrl.contribution" placeholder="Enter Monthly Contribution"> <br /> <br />
+  Portfolio Type: <br /> <input type="text" ng-model="ctrl.portfolioType" placeholder="Ex: Moderately Aggressive"> <br /> <br />
+  Large Cap:  <br /> <input type="text" ng-model="ctrl.largeCap" placeholder="Enter % of Large Cap. Ex: 45"> <br /> <br />
+  Small Cap: <br />  <input type="text" ng-model="ctrl.smallCap" placeholder="Enter % of Small Cap. Ex: 15"> <br /> <br />
+  Fixed Cap: <br />  <input type="text" ng-model="ctrl.fixedCap" placeholder="Enter % of Fixed Cap. Ex: 15"> <br /> <br />
+  Cash: <br />  <input type="text" ng-model="ctrl.cashCap" placeholder="Enter % of Cash. Ex: 5%"> <br /> <br />
+  Monthly Contribution: <br />  <input type="text" ng-model="ctrl.contribution" placeholder="Enter Monthly Contribution Ex: 1000"> <br /> <br />
   Retirement Goal: <br />  <input type="text" ng-model="ctrl.retirementGoal" placeholder="Enter Retirement Goal"> <br /> <br />
-  <input type="submit" value="Save a retirement plan" class="btn btn-success">
+  <input type="submit" value="Save a retirement plan" class="btn btn-success" onClick="window.location.reload();">
   </form>
 
   </div>

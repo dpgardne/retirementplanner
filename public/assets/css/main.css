@@ -28,6 +28,10 @@ header a {
 
 }
 
+.topnav .icon {
+    display: none;
+}
+
 .logo {
   float: left;
   padding: 15px;
@@ -162,4 +166,76 @@ nav a:hover {
   margin-left: 40px;
   padding: 20px;
   background-color: #e8e8ee;
+}
+
+.savedPorts {
+  position: relative;
+  clear: both;
+  margin: 50px;
+  display: block;
+}
+
+.myRow {
+  background-color: #deefd7;
+}
+
+/*media queries*/
+@media screen and (max-width: 600px) {
+  .topnav ul li{
+    clear: both;
+    display: block;
+    width: 100%;
+    /*margin-top: -25px;*/
+    padding: 0px;
+    position: relative;
+    top: 80px;
+    min-width: 200px;
+
+  }
+  .logo {
+
+    width: 100%;
+    clear: both;
+
+  }
+  header {
+    height: 200px;
+  }
+
+  .containerHome_about {
+    background-color: #35ad5f;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    font-size: 24px;
+    padding: 14px;
+  }
+
+    .loginForm {
+      width: 40%;
+      position: relative;
+      top: 50px;
+      left: -100px;
+      font-size: 18px;
+    }
+
+    .loginForm input {
+      width: 300px;
+    }
+
+    .signupForm {
+      width: 40%;
+      position: relative;
+      top: 50px;
+      left: -100px;
+      font-size: 18px;
+    }
+
+    .signupForm input {
+
+      width: 300px;
+    }
+
 }

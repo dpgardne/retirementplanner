@@ -36,7 +36,8 @@
     <div class="logo">
       <span class="glyphicon glyphicon-pencil"></span>Retirement Planner
     </div>
-<nav>
+    <!-- user navigation -->
+<nav  class="topnav" id="myTopnav">
   <ul>
 <li><a href="/">Home</a></li>
   <!-- if user is not logged in then show it  -->
@@ -44,8 +45,10 @@
   <li><a href="/signup" ng-show="!main.isLoggedIn">Signup</a></li>
   <li><a href="#" ng-click="main.logout();" ng-show="main.isLoggedIn">Logout</a></li>
   <li><a href="/profile" ng-show="main.isLoggedIn">Welcome {{main.username}}</a></li>
+  <a href="javascript:void(0);" class="icon" ng-click="main.myFunction()">&#9776;</a>
   </ul>
 </nav>
+<!-- user navigation -->
 </div>
 </header>
 <!-- navigation  -->
